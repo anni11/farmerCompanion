@@ -1,0 +1,34 @@
+<%include partials/header%>
+
+<div class="container">
+	<h2><%=demand.title%></h2>
+	<p><%=demand.body%></p>
+	<p>
+		<h3>Budget: <%=demand.amount%></h3>
+	</p>
+	<p>
+		<strong>Contact: <%=demand.phone%></strong>
+	</p>
+	<% if (currUser) { %>
+		<% if (demand.phone==currUser.phone) { %>
+			<p>
+			<a href="/demand/<%=demand._id%>/update" class="btn btn-warning">update</a>
+			</p>
+			<p>
+			<form action="/demand/<%=demand._id%>/delete" method="POST">
+				<button class="btn btn-danger">delete</button>
+			</form>
+			</p>
+		<% } else { %>
+			<p>contact <a href="/user/<%=uuser._id%>"><%=demand.phone%></a> to discuss the demands.</p>
+		<% } %>
+	<% } else { %>
+		<p>login to edit and delete</p>
+	<% } %>
+	
+	
+</div>
+
+
+
+<%include partials/footer%>

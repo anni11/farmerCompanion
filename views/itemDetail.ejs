@@ -1,0 +1,49 @@
+<%include partials/header%>
+
+
+
+
+<div class="container">
+	<h1>item details</h1>
+	<h4>item Name: <%=item.name%></h4>
+	<p>item Description: <%=item.description%></p>
+	<p>
+	<strong>total: <%=item.quantity%> <%=item.unit%>
+	</strong>
+	</p>
+	<p>
+	<strong>price: Rs. <%=item.price%></strong>
+	</p>
+	<p>
+	phone: <a href="/user/<%=user._id%>"><%=item.seller%></a>
+	</p>
+	<p>
+	<img src="<%="https://media.gettyimages.com/photos/young-girllaptop-picture-id91199117?b=1&k=6&m=91199117&s=170x170&h=v6NC5nB8VHNukT0bY7Xk0hmzvA5BiFcDlYQ2BAI8G74="%>">
+	</p>
+
+	<% if (currUser) { %>
+		<% if(currUser.phone==item.seller){ %>
+			<p>
+			<a href="/item/<%=item._id%>/update" class="btn btn-warning">edit</a>
+			</p>
+			<p>
+			<form action="/item/<%=item._id%>/delete" method="post">
+				<button class="btn btn-danger bt-lg">delete</button>
+			</form>
+			</p>
+		<% } else { %>
+			<form method="post" action="/item/<%=item._id%>/delete">
+				<button class="btn btn-primary bt-lg">buy</button>
+			</form>
+			<p>currently clicking on the buy button will delete the item.</p>
+		<% } %>
+	<% } else { %>
+		<p>login to edit , delete and buy</p>
+	<% } %>
+</div>
+
+
+
+
+
+<%include partials/footer%>

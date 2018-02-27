@@ -1,0 +1,26 @@
+
+
+<%include partials/header%>
+
+<div class="container">
+<h1>demands page</h1>
+
+<%demands.forEach(function(demand){%>
+	<div class="panel panel-default">
+	<div class="panel-body">
+		<a href="/demand/<%=demand._id%>">
+			<h3><%= demand.title%></h3>
+		</a>
+		<p><%=demand.body%></p>
+		<p>
+			<strong>Amount: <%=String(demand.amount)%>
+			</strong>
+		</p>
+		<a href="/demand/<%=demand._id%>">details..</a>
+	</div>
+	</div>
+<%});%>
+
+</div>
+
+<%include partials/footer%>

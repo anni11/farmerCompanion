@@ -1,0 +1,25 @@
+
+
+<%include partials/header%>
+
+
+<div class = "container">
+<h1>items page</h1>
+<h3>buy sell commodities</h3>
+<p>
+<a href="/item/new" class="btn btn-primary">sell item!!</a>
+</p>
+<% items.forEach(function(item){ %>
+
+	<div class="panel panel-default">
+	<div class="panel-body">
+		<h3><%=item.name%></h3>
+		<p><strong>price: </strong>Rs. <%=item.price%></p>
+		<p><strong>SellerPhone: </strong> <%=item.seller%> </p>
+		<a href="/item/<%=item._id%>">details..</a>
+	</div>
+	</div>
+<% }); %>
+</div>
+
+<%include partials/footer%>

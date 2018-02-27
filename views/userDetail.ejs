@@ -1,0 +1,60 @@
+
+<%include partials/header%>
+
+
+
+<div class="container">
+	<h1>user details page</h1>
+	<p>
+		userId: <%=user._id%>
+	</p>
+	<p>
+		name: <%=user.name%>
+	</p>
+	<p>
+		contact: <%=user.phone%>
+	</p>
+	<p>
+		from: <%=user.town%>, <%=user.state%>
+	</p>
+	<% if (currUser) { %>
+		<% if (currUser.phone==user.phone) { %>
+			<a href="/user/<%=user._id%>/edit" class="btn btn-info">edit profile</a>
+		<% } else { %>
+			
+		<% } %>
+	<% } else { %>
+		<p>login to edit profile</p>
+	<% } %>
+</div>
+
+
+<div class="container">
+	<h2>open demands by <%=user.name%></h2>
+	<% demands.forEach(function(demand){ %>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4><%=demand.title%></h4>
+				<a href="/demand/<%=demand._id%>">details..</a>
+			</div>
+		</div>
+	<% }); %>
+</div>
+
+
+<div class="container">
+	<h2>items sold by <%=user.name%></h2>
+	<% items.forEach(function(item){ %>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4><%=item.name%></h4>
+				<a href="/item/<%=item._id%>">details..</a>
+			</div>
+		</div>
+	<% }); %>
+</div>
+
+
+
+
+<%include partials/footer%>

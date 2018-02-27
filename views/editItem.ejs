@@ -1,0 +1,23 @@
+
+
+<%include partials/header%>
+
+<h1>edit item</h1>
+
+
+<form action="/item/<%=item._id%>" method="post">
+	name: <input type="text" name="item[name]" 
+		value="<%=item.name%>">
+	description: 
+	<input type="text" name="item[description]" 
+		value="<%=item.description%>">
+	quantity: <input type="number" name="item[quantity]"
+		value="<%=item.quantity%>">
+	unit: <input type="text" name="item[unit]" 
+		value="<%=item.unit%>">
+	price: <input type="number" name="item[price]" 
+		value="<%=item.price%>">
+	<button>update</button>
+</form>
+
+<%include partials/footer%>

@@ -1,0 +1,44 @@
+<%include partials/header%>
+
+
+<div class="container">
+
+<h1>Update user details</h1>
+
+<form class="form-horizontal" action="/user/<%=user._id%>" method="POST">
+  <div class="form-group">
+    <label for="namee" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="namee" placeholder="name" name="user[name]" value="<%=user.name%>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="naeeee" class="col-sm-2 control-label">town</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="naeeee" placeholder="town" name="user[town]" value="<%=user.town%>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="naeee" class="col-sm-2 control-label">state</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="naeee" placeholder="state" name="user[state]" value="<%=user.state%>">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+
+</form>
+
+<p>currently there is no feature to update the password or phone number because of security purpose..</p>
+</div>
+
+
+
+<%include partials/footer%>

@@ -1,0 +1,24 @@
+{
+  "name": "farmers-he",
+  "version": "1.0.0",
+  "description": "A simple portal and a web app for farmers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Abhishek Singh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "faker": "^4.1.0",
+    "gettyimages-api": "^2.2.0",
+    "mongoose": "^5.0.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FC</title>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+		
+		body {
+			padding-top: 70px;
+		}
+	</style>
+</head>
+
+<body>
+<nav class = "navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">FarmerCompanion</a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li><a href="/about">About</a></li>
+		<li><a href="/contact">Contact</a></li>
+		<li><a href="/demand">Demands</a></li>
+		<li><a href="/demand/new">Post</a></li>
+		<li><a href="/item">Commodities</a></li>
+		<li><a href="/user">Users</a></li>
+
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<% if (!currUser) { %>
+			<li><a href="/signup">signup</a></li>
+			<li><a href="/login">login</a></li>
+		<% } else { %>
+			<li><a href="/user/<%=currUser._id%>">signed in as <%=currUser.name%></a></li>
+			<li><a href="/logout">logout</a></li>		
+		<% } %>
+	</ul>
+</div>
+</nav>

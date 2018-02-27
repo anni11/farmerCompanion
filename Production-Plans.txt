@@ -1,0 +1,37 @@
+
+
+This is a simple web app platform for the farmers.
+
+Functionalities
+---------------
+
+0. Faker will be used to seed data.
+
+1. Farmers and merchants can signup, login.
+	a. their phone number is supposed to  be the primary key, along with the password to login.
+	b. All their details like name, phone number, city/town/village should be present.
+	c. there will be a users page which will list the details of the user.
+
+2. Farmers can post their demands and the max amount of money they can spend.
+	a. A dbs model to store their demands which will contain the title , desc , amount and date.
+	b. a show page which will list down the demands so that a merchant can freely look and decide which demand he can fulfill.
+	c. only the farmers who have posted their demands can delete them if needed.
+	d. a specific show page showing the details of the demands.
+	e. the status of the demand will be open, undertaken and completed.
+
+3. If a merchant decides to undertake the demand then he will have to fulfill it, the status of the demand will change to undertaken
+   and on the details page of the demand, the status of the demand will be undertaken and there will be a list of merchants/farmers
+   who have undertaken that demand so a demand can be undertaken by multiple suppliers and there will be a button to set it to reopen
+   in case if the farmer feels it is not fulfilled.
+
+4. when the demand is completed it will be moved to the completed page which will act as a sort of history page.
+
+5. if time permits then there will be a demands to the gov page which will list the demands for the gov and a support button which will
+   increase the support and greater the support, more is gravity of the situation.
+
+
+v2 change
+----------
+1. anybody can post a request with his phone number and if phone number is  a part of the database then it's a registered user's request
+   or it's the request of an unregistered user.
+
